@@ -15,11 +15,11 @@ namespace DataAccess.Concrete.InMemory
         {
             _products = new List<Product> 
             { 
-                new Product{ProduckId = 1 ,CategoryId = 1 , ProductName = "Bardak" , UnitPrice = 15 , UnitsInStok = 15},
-                new Product{ProduckId = 2 ,CategoryId = 1 , ProductName = "Kamere" , UnitPrice = 500 , UnitsInStok = 52},
-                new Product{ProduckId = 3 ,CategoryId = 2 , ProductName = "Telefon" , UnitPrice = 1500 , UnitsInStok = 2},
-                new Product{ProduckId = 4 ,CategoryId = 2 , ProductName = "Klavye" , UnitPrice = 150 , UnitsInStok = 65},
-                new Product{ProduckId = 5 ,CategoryId = 2 , ProductName = "Fare" , UnitPrice = 85 , UnitsInStok = 1}
+                new Product{ProductId = 1 ,CategoryId = 1 , ProductName = "Bardak" , UnitPrice = 15 , UnitsInStock = 15},
+                new Product{ProductId = 2 ,CategoryId = 1 , ProductName = "Kamere" , UnitPrice = 500 , UnitsInStock = 52},
+                new Product{ProductId = 3 ,CategoryId = 2 , ProductName = "Telefon" , UnitPrice = 1500 , UnitsInStock = 2},
+                new Product{ProductId = 4 ,CategoryId = 2 , ProductName = "Klavye" , UnitPrice = 150 , UnitsInStock = 65},
+                new Product{ProductId = 5 ,CategoryId = 2 , ProductName = "Fare" , UnitPrice = 85 , UnitsInStock = 1}
 
             };
         }
@@ -35,7 +35,7 @@ namespace DataAccess.Concrete.InMemory
 
         public void Delete(Product produck)
         {
-            Product productToDelete = productToDelete = _products.SingleOrDefault(p => p.ProduckId == produck.ProduckId);
+            Product productToDelete = productToDelete = _products.SingleOrDefault(p => p.ProductId == produck.ProductId);
 
             _products.Remove(productToDelete);
         }
@@ -64,12 +64,12 @@ namespace DataAccess.Concrete.InMemory
         public void Update(Product produck)
         {
             // göderdiğim ürün id'sine sahip olan ürünü bul 
-            Product productToUpdate  = _products.SingleOrDefault(p => p.ProduckId == produck.ProduckId);
+            Product productToUpdate  = _products.SingleOrDefault(p => p.ProductId == produck.ProductId);
 
             productToUpdate.ProductName = produck.ProductName;
             productToUpdate.CategoryId = produck.CategoryId;
             productToUpdate.UnitPrice = produck.UnitPrice;
-            productToUpdate.UnitsInStok = produck.UnitsInStok;
+            productToUpdate.UnitsInStock = produck.UnitsInStock;
 
         }
     }

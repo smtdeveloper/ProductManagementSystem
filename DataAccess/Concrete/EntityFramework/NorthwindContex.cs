@@ -16,8 +16,8 @@ namespace DataAccess.Concrete.EntityFramework
 
         }
 
-        public DbSet<Product> producks   { get; set; }
-        public DbSet<Category> category { get; set; }
-        public DbSet<Customer> customers  { get; set; }
+        public DbSet<Product> Products   { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Customer> Customers  { get; set; }
     }
 }
