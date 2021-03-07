@@ -15,6 +15,10 @@ namespace Business.Abstrack
 
         List<ProductDetailDto> GetProductDetails();
 
+        Product GetById(int productId);
+        void Add(Product product);
+
+       
 
 
 
