@@ -38,7 +38,7 @@ namespace WebAPI.Controllers
 
         }
 
-        [HttpGet("getbyid")]  // isimlerle alyans veriyoruz.
+        [HttpGet("getbyid")]  // isimlerle alyans veriyoruz.  // örnek: localhost:44342/api/products/getbyid
         public IActionResult GetById(int id)
         {
             var result = _productService.GetById(id);
@@ -60,8 +60,35 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
 
-              
         }
+
+
+        [HttpPost("update")]
+        public IActionResult Update(Product product)
+        {
+            var result = _productService.Update(product);
+            if (result.Success  )
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+
+        [HttpPost("delete")]
+        public IActionResult Delete(Product product)
+        {
+            var result = _productService.Delete(product);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
+
+
     }
 
 

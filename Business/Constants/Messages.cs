@@ -10,6 +10,8 @@ namespace Business.Constants
         // tool görevi görüyor. Basit metinler topluğu.
 
         public static string ProductAdded = "Ürün eklendi";
+        public static string ProductDeleted = "Ürün Silindi";
+        public static string ProductUpdated = "Ürün Güncellendi";
         public static string ProductNameInvalid = "Ürün ismi  geçersiz";
         public static string MaintenanceTime = "Sistem Bakımda, Sonra Gel :)";
         public static string ProductsListed= "Ürünler Listelendi"; 
