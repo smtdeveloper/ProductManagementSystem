@@ -1,13 +1,19 @@
 ﻿using Business.Abstrack;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstrack;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
 using Entities.DTOs;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
+using ValidationException = FluentValidation.ValidationException;
 
 namespace Business.Concrete
 {
@@ -21,17 +27,23 @@ namespace Business.Concrete
 
         }
 
+       
+        [ValidationAspect(typeof(ProductValidator))]  // bu yapının ismi  Attributes .
         public IResult Add(Product product)
         {
-            // business codes 
+            // business codes
+            // Validation - Doğrulama code
+            // ! değidir.
 
-            if(product.ProductName.Length < 2)
-            {
-                return new ErrorResult(Messages.ProductNameInvalid);
-            }
+           
+           
+            //Loglama
+            //Cache
+
+
             _productDal.Add(product);
 
-            return new SuccessResult(Messages.ProductAdded);
+            return new SuccessResult(Messages.ProductAdded); 
 
         }
 
@@ -45,7 +57,7 @@ namespace Business.Concrete
         {
             // iş kodları 
             // yetkisi var mı
-            if (DateTime.Now.Hour == 23)
+            if (DateTime.Now.Hour == 22)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
 
@@ -78,7 +90,7 @@ namespace Business.Concrete
         {
             // iş kodları 
             // yetkisi var mı
-            if (DateTime.Now.Hour == 23)
+            if (DateTime.Now.Hour == 22)
             {
                 return new ErrorDataResult<List<ProductDetailDto>>(Messages.MaintenanceTime);
 
