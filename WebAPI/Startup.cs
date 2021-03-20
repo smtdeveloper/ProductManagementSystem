@@ -35,6 +35,7 @@ namespace WebAPI
             // Autofac :)
 
             services.AddControllers();
+
             //services.AddSingleton<IProductService , ProductManager>();
             //services.AddSingleton<IProductDal, EfProduckDal>();
 

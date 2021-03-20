@@ -16,10 +16,13 @@ namespace Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();  // business katmanı için referans olusturduk.
-            builder.RegisterType<EfProduckDal>().As<IProductDal>().SingleInstance();        // DataAccess katmanı için referans olusturduk. 
+            builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();     // business katmanı için referans olusturduk.
+            builder.RegisterType<EfProduckDal>().As<IProductDal>().SingleInstance();          // DataAccess katmanı için referans olusturduk. 
 
-            
+            builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
+            builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().SingleInstance();
+
+
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()

@@ -1,4 +1,5 @@
 ﻿using Business.Abstrack;
+using Core.Utilities.Results;
 using DataAccess.Abstrack;
 using Entities.Concrete;
 using System;
@@ -17,18 +18,21 @@ namespace Business.Concrete
             _categoryDal = categoryDal;
         }
 
-        public List<Category> GetAll()
+        public IDataResult<List<Category>> GetAll()
         {
-            //iş kodları
-            return _categoryDal.GetAll();
+             //  
+            // iş kodları
+            return new SuccessDataResult<List<Category>>(_categoryDal.GetAll());
         }
 
 
         // select * from Category where Category = 3
-        public Category GetById(int categoryId)
+        public IDataResult<Category> GetById(int categoryId)
         {
-            return _categoryDal.Get(c => c.CategoryId == categoryId);
+            return new SuccessDataResult<Category>(_categoryDal.Get(c => c.CategoryId == categoryId));
 
         }
+
+
     }
 }

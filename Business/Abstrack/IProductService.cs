@@ -20,7 +20,7 @@ namespace Business.Abstrack
         IResult Add(Product product);
         IResult Update(Product product);
 
-        IResult Delete(Product product);
+        IResult Delete(Product product);    
 
 
 
