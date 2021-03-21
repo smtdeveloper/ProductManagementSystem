@@ -31,6 +31,8 @@ namespace Business.Concrete
 
         }
 
+        //Claim sahip olmak kullacının.
+
         [ValidationAspect(typeof(ProductValidator))]  // bu yapının ismi  Attributes .  
                                                      // Validation - Doğrulama code
         public IResult Add(Product product)
