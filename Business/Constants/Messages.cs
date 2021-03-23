@@ -1,6 +1,7 @@
 ﻿using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Constants
@@ -18,6 +19,7 @@ namespace Business.Constants
         public static string ProductCountOfCategoryError = "Bir Kategoride en fazla 10 ürün olabir";
         public static string ProductNameAlreadyExists = "Aynı isimde Ürün eklenemez :)";
         public static string CategoryLimitExceded = "Kategori Limiti Aşıldı. Yeni ürün eklenemiyor :( ";
-
+        public static string AuthorizationDenied= "Yetkiniz Yok";
+        public static string UserAdded="Kullanıcı eklendi";
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Business.Abstrack;
+using Business.BussinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
@@ -33,8 +34,9 @@ namespace Business.Concrete
 
         //Claim sahip olmak kullacının.
 
-        [ValidationAspect(typeof(ProductValidator))]  // bu yapının ismi  Attributes .  
-                                                     // Validation - Doğrulama code
+        [SecuredOperation("product.add,admin")]
+        [ValidationAspect(typeof(ProductValidator))]  // bu yapının ismi  Attributes .    // Validation - Doğrulama code
+                        
         public IResult Add(Product product)
         {
             // bir kategoride 15 üründen fazla olamaz ?

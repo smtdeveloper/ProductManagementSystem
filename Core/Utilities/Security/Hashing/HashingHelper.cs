@@ -6,7 +6,7 @@ namespace Core.Utilities.Security.Hashing
 {
     public class HashingHelper
     {
-        public static void CretePasswordHash
+        public static void CreatePasswordHash  //CreatePasswordHash
             (string password, out byte[] passwordHash, out byte[] passwordSalt )
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512())
@@ -21,10 +21,10 @@ namespace Core.Utilities.Security.Hashing
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt))
             {
-              var   computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
-                for (int i = 0; i < passwordHash.Length; i++)
+              var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
+                for (int i = 0; i < computedHash.Length; i++)
                 {
-                    if (passwordHash[i] != passwordSalt[i])
+                    if (computedHash[i] != passwordHash[i])
                     {
                         return false;
                     }
@@ -32,8 +32,10 @@ namespace Core.Utilities.Security.Hashing
                 return true;
             }
 
-           
-       
+
+            
         }
+
+       
     }
 }
