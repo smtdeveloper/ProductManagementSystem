@@ -8,8 +8,8 @@ namespace Business.Abstrack
 {
     public interface IUserService
     {
-        List<OperationClaim> GetClaims(User user);
-        void Add(User user);
+        List<OperationClaim>  GetClaims(User user);
+        void Add  (User user);
         User GetByMail(string email);
     }
 }

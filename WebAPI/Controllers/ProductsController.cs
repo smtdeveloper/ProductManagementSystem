@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
         {
             _productService = productService;
         }
-
+         
         [HttpGet("getall")]
         public IActionResult GetAll()
         {   

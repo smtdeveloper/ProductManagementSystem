@@ -20,15 +20,16 @@ namespace Business.Concrete
 
         public List<OperationClaim>  GetClaims(User user)
         {
-            return _userDal.GetClaims(user);
+            return  _userDal.GetClaims(user);
         }
 
         public void Add (User user)
         {
-            _userDal.Add(user);
+             _userDal.Add(user);
+          
         }
 
-        public User  GetByMail(string email)
+        public User   GetByMail(string email)
         {
             return _userDal.Get(u => u.Email == email);
         }

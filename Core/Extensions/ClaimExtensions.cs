@@ -11,7 +11,7 @@ namespace Core.Extensions
     {
         public static void AddEmail(this ICollection<Claim> claims, string email)
         {
-            claims.Add(new Claim(JwtRegisteredClaimNames.Email, email));
+            claims.Add(new Claim(JwtRegisteredClaimNames.Email, email));    
         }
             
         public static void AddName(this ICollection<Claim> claims, string name)
