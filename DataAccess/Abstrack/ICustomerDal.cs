@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DataAccess.Abstrack
 {
-    public interface ICustomerDal :IEntityRepository<Customer>
+    public interface ICustomerDal : IEntityRepository<Customer>
     {
 
     }

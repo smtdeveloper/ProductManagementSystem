@@ -21,5 +21,8 @@ namespace Business.Constants
         public static string CategoryLimitExceded = "Kategori Limiti Aşıldı. Yeni ürün eklenemiyor :( ";
         public static string AuthorizationDenied= "Yetkiniz Yok";
         public static string UserAdded="Kullanıcı eklendi";
+        public static string CategoryAdded="Kategori  Eklendi";
+        public static string CategoryDelete= "Kategori Silindi";
+        public static string CategoryUpdate = "Kategori Güncellendi";
     }
 }

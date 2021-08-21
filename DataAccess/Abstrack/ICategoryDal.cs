@@ -9,8 +9,5 @@ namespace DataAccess.Abstrack
 {
     public interface ICategoryDal : IEntityRepository<Category>
     {
-       
-
-
     }
 }
