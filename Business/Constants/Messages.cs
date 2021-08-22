@@ -24,5 +24,8 @@ namespace Business.Constants
         public static string CategoryAdded="Kategori  Eklendi";
         public static string CategoryDelete= "Kategori Silindi";
         public static string CategoryUpdate = "Kategori Güncellendi";
+        public static string OrderAdded="Sipraris ekelendi";
+        public static string OrderDelete = "Sipraris Silindi";
+        public static string OrderUpdate = "Sipraris Güncellendi";
     }
 }
