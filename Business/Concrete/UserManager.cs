@@ -18,20 +18,42 @@ namespace Business.Concrete
             _userDal = userDal;
         }
 
-        public List<OperationClaim>  GetClaims(User user)
-        {
-            return  _userDal.GetClaims(user);
-        }
-
-        public void Add (User user)
+        public IResult Add(User user)
         {
              _userDal.Add(user);
-          
+            return new SuccessResult(Messages.UserAdded);
         }
 
-        public User   GetByMail(string email)
+        public IResult Delete(User user)
         {
-            return _userDal.Get(u => u.Email == email);
+            _userDal.Delete(user);
+            return new SuccessResult(Messages.userDeleted);
+        }
+
+        public IDataResult<List<User>> GetAll()
+        {
+          return new SuccessDataResult<List<User>>(_userDal.GetAll());
+        }
+
+        public IDataResult<User> GetById(int userId)
+        {
+            return new SuccessDataResult<User>(_userDal.Get(p => p.Id == userId));
+        }
+
+        public IDataResult<User> GetByMail(string email)
+        {
+            return new SuccessDataResult<User>(_userDal.Get(p => p.Email == email));
+        }
+
+        public IDataResult<List<OperationClaim>> GetClaims(User user)
+        {
+            return new SuccessDataResult<List<OperationClaim>>(_userDal.GetClaims(user));
+        }
+
+        public IResult Update(User user)
+        {
+            _userDal.Update(user);
+            return new SuccessResult();
         }
     }
 }
