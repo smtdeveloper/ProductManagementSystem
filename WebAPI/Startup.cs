@@ -40,6 +40,7 @@ namespace WebAPI
             // Autofac :)
 
             services.AddControllers();
+            services.AddSwaggerDocument();
 
             //services.AddSingleton<IProductService , ProductManager>();
             //services.AddSingleton<IProductDal, EfProduckDal>();
@@ -78,6 +79,9 @@ namespace WebAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3();    
 
             app.UseAuthentication();
 

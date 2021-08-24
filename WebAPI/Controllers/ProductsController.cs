@@ -16,7 +16,7 @@ namespace WebAPI.Controllers
     public class ProductsController : ControllerBase
     {
         // Loose Coupled -- Gevşek Bağımlılık
-        // IoC Constainer --
+        // I    oC Constainer --
         IProductService _productService;
         public ProductsController(IProductService productService)
         {
@@ -26,7 +26,7 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {   
-            //  Swagger
+          
             // Depency Chain -- Bağımlık zinciri (kurmustuk -- bad code)
            
             var result =  _productService.GetAll();

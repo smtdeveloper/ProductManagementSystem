@@ -10,7 +10,7 @@ namespace Business.ValidationRules.FluentValidation
     {
         public CategoryValidator()
         {
-            RuleFor(c => c.CategoryId).NotEmpty();
+          //  RuleFor(c => c.CategoryId).NotEmpty();
             RuleFor(c => c.CategoryName).NotEmpty();
         }
     }

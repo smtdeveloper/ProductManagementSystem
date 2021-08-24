@@ -10,9 +10,11 @@ namespace Entities.Concrete
         // Çıplak Class kalmasın
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
-        public string Desription { get; set; }
+        
+        // public string Desription { get; set; }
+       
 
-      //  public byte[] Picture { get; set; }
+        //  public byte[] Picture { get; set; }
 
     }
 }

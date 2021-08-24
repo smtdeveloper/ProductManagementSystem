@@ -33,6 +33,9 @@ namespace Business.DependencyResolvers.Autofac
 
             builder.RegisterType<HttpContextAccessor>().As<IHttpContextAccessor>();
 
+
+            //  AspectInterceptorSelector Cağır     
+
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
