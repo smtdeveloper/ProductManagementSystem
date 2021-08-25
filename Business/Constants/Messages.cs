@@ -37,5 +37,11 @@ namespace Business.Constants
         public static string OrderAdded="Sipraris ekelendi";
         public static string OrderDelete = "Sipraris Silindi";
         public static string OrderUpdate = "Sipraris Güncellendi";
+
+        public static string EmployeeAdded= "çalışan Eklendi";
+        public static string EmployeeUpdated = "çalışan Günçellendi";
+        public static string EmployeeDeleted = "çalışan Silindi";
+        public static string EmployeeGetAllList = "çalışanlar Listelendi";
+        public static string EmployeeGetByIdList = "çalışan Listelendi";
     }
 }
