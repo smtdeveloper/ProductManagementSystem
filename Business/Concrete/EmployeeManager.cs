@@ -1,5 +1,7 @@
 ﻿using Business.Abstrack;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstrack;
 using Entities.Concrete;
@@ -18,6 +20,7 @@ namespace Business.Concrete
             _employeeDal = employeeDal;
         }
 
+        [ValidationAspect(typeof(EmployeeValidator))]
         public Result Add(Employee employee)
         {
             _employeeDal.Add(employee);
@@ -40,6 +43,7 @@ namespace Business.Concrete
             return new SuccessDataResult<Employee>(_employeeDal.Get(p => p.EmployeeID == employeeId));
         }
 
+        [ValidationAspect(typeof(EmployeeValidator))]
         public Result Update(Employee employee)
         {
             _employeeDal.Update(employee);
