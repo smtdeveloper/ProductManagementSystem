@@ -22,12 +22,13 @@ namespace Business.Constants
         public static string ProductCountOfCategoryError = "Bir Kategoride en fazla 10 ürün olabir";
         public static string ProductNameAlreadyExists = "Aynı isimde Ürün eklenemez :)";
 
-        public static string CategoryLimitExceded = "Kategori Limiti Aşıldı. Yeni ürün eklenemiyor :( ";
+        public static string CategoryLimitExceded = "Kategori Limiti Aşıldı. Yeni ürün eklenemiyor.";
         public static string CategoryAdded = "Kategori  Eklendi";
         public static string CategoryDelete = "Kategori Silindi";
         public static string CategoryUpdate = "Kategori Güncellendi";
+        public static string CategoryNameAlreadyExists = "Aynı isimde Kategori eklenemez :)";
 
-        
+
         public static string UserAdded="Kullanıcı eklendi";
         public static string userDeleted= "Kullanıcı Silindi";
         public static string userUpdate = "Kullanıcı Güncelendi";
@@ -43,5 +44,6 @@ namespace Business.Constants
         public static string EmployeeDeleted = "çalışan Silindi";
         public static string EmployeeGetAllList = "çalışanlar Listelendi";
         public static string EmployeeGetByIdList = "çalışan Listelendi";
+       
     }
 }

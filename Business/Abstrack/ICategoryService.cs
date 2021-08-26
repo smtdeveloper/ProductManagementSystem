@@ -11,8 +11,8 @@ namespace Business.Abstrack
         IDataResult<List<Category>> GetAll();
         IDataResult<Category> GetById(int categoryId);
 
-        Result Add(Category category);
-        Result Delete(Category category);
-        Result Update(Category category);
+        IResult Add(Category category);
+        IResult Delete(Category category);
+        IResult Update(Category category);
     }
 }
