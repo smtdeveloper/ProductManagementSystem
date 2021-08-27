@@ -35,7 +35,7 @@ namespace Business.Concrete
 
 
        // [SecuredOperation("product.add,admin")]
-        [ValidationAspect(typeof(ProductValidator))]  // bu yapının ismi  Attributes .    // Validation - Doğrulama code
+       // [ValidationAspect(typeof(ProductValidator))]  // bu yapının ismi  Attributes .    // Validation - Doğrulama code
                         
         public IResult Add(Product product)
         {
@@ -110,7 +110,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetails());
         }
 
-       // [ValidationAspect(typeof(ProductValidator))]
+      //  [ValidationAspect(typeof(ProductValidator))]
         public IResult Update(Product product)
         {
             IResult result = BusinessRules.Run(CheckIfProductCountOfCategoryCorrect(product.CategoryId),
@@ -129,7 +129,7 @@ namespace Business.Concrete
 
         private IResult CheckIfProductNameExists(string productName)
         {
-            var result = _productDal.GetAll(p => p.ProductName == productName).Count();
+            var result = _productDal.GetAll(p => p.ProductName == productName).Count(); // .any();
             if (result > 0) 
             {
                 return new ErrorResult(Messages.ProductNameAlreadyExists);
@@ -164,24 +164,7 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        private IResult ChecIfCategoryLimit_2(int categoryId)
-        {
-            var categoryCount = _productDal.GetAll(p => p.CategoryId == categoryId).Count;
-            if (categoryCount > 10)
-            {
-                return new ErrorResult(Messages.ProductCountOfCategoryError);
-            }
-            return new SuccessResult();
-        }
-        private IResult CheckIfProductNameExists_2(string productName)
-        {
-            var result = _productDal.GetAll(p => p.ProductName == productName).Count();
-            if (result > 0)
-            {
-                return new ErrorResult(Messages.ProductNameAlreadyExists);
-            }
-            return new SuccessResult();
-        }
+        
 
 
     }

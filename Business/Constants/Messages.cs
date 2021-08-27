@@ -44,6 +44,12 @@ namespace Business.Constants
         public static string EmployeeDeleted = "çalışan Silindi";
         public static string EmployeeGetAllList = "çalışanlar Listelendi";
         public static string EmployeeGetByIdList = "çalışan Listelendi";
-       
+
+        public static string ProductImageAdded="Ürün resmi Eklendi";
+        public static string ProductImageDeleted = "Ürün resmi Silindi";
+        public static string ProductImageUpdate = "Ürün resmi Güncellendi";
+        public static string ProductImageGetAll = "Ürünler resmi Listelendi";
+        public static string ProductImageGetById = "Ürün resmi Getirirdi";
+        internal static string ProductImageLimit="Ürün resmi ekleme limetine ulaşdınız (Snır = 5 Adet)";
     }
 }
